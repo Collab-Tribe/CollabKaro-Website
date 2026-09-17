@@ -108,8 +108,273 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 /* ==========================================================================
-   Navigation Bar (Crisp Glassmorphism, Floating Brand)
+   Modern App Shell & Header (Crisp Glassmorphic 2026 Light Theme)
    ========================================================================== */
+
+.ck26-app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.ck26-app-shell > main {
+  flex: 1;
+}
+
+.ck26-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.ck26-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 20px;
+}
+
+.ck26-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: var(--text-main);
+  text-decoration: none;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.ck26-logo > span:first-child {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(255, 56, 92, 0.3);
+}
+
+.ck26-logo-highlight {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ck26-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 0 24px;
+}
+
+.ck26-nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.ck26-nav-links a:hover {
+  color: var(--text-main);
+  background: var(--bg-subtle);
+}
+
+.ck26-nav-links a.active {
+  color: var(--primary);
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+.ck26-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.ck26-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.ck26-btn-ghost:hover {
+  color: var(--text-main);
+  background: var(--bg-subtle);
+}
+
+.ck26-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.ck26-btn-sm {
+  padding: 8px 14px;
+  font-size: 12.5px;
+  border-radius: var(--radius-sm);
+}
+
+.ck26-header-actions .brand-primary-btn {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15) !important;
+}
+
+.ck26-header-actions .brand-primary-btn:hover {
+  background: #1E293B !important;
+  transform: translateY(-1px);
+}
+
+.ck26-header-actions .creator-primary-btn {
+  background: var(--primary-gradient) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 12px rgba(255, 56, 92, 0.28) !important;
+}
+
+.ck26-header-actions .creator-primary-btn:hover {
+  background: var(--primary-hover) !important;
+  transform: translateY(-1px);
+}
+
+.ck26-mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 7px;
+  color: var(--text-main);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.ck26-mobile-menu-btn:hover {
+  background: var(--bg-subtle);
+}
+
+.ck26-mobile-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px 24px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  animation: ckSlideDown 0.2s ease-out;
+}
+
+.ck26-mobile-drawer a {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.ck26-mobile-drawer a:hover {
+  background: var(--bg-subtle);
+  color: var(--primary);
+}
+
+.ck26-mobile-drawer .ck26-mobile-cta-ghost {
+  margin-top: 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+  font-weight: 700;
+}
+
+.ck26-mobile-drawer .ck26-mobile-cta-primary {
+  text-align: center;
+  background: #0F172A;
+  color: #FFFFFF !important;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.ck26-mobile-drawer .creator-mobile-cta {
+  background: var(--primary-gradient) !important;
+  box-shadow: 0 4px 12px rgba(255, 56, 92, 0.3);
+}
+
+@keyframes ckSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ckFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 899px) {
+  .ck26-nav-links {
+    display: none !important;
+  }
+  .ck26-header-actions {
+    display: none !important;
+  }
+  .ck26-mobile-menu-btn {
+    display: flex !important;
+  }
+}
+
+/* Legacy .ck26-nav support */
 .ck26-nav {
   position: sticky;
   top: 0;
