@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting — CollabKaro</title>
+    <script>
+      // Single Page App fallback for GitHub Pages
+      // Converts pathname into hash-based route and redirects
+      var path = window.location.pathname;
+      var repo = '/CollabKaro-Website';
+      if (path.startsWith(repo)) {
+        var subpath = path.slice(repo.length);
+        if (!subpath.startsWith('/')) {
+          subpath = '/' + subpath;
+        }
+        window.location.replace(
+          repo + '/#' + subpath + window.location.search + window.location.hash
+        );
+      } else {
+        window.location.replace('/CollabKaro-Website/');
+      }
+    </script>
+  </head>
+  <body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; background-color: #F8F9FA;">
+    <p style="color: #64748B;">Redirecting to CollabKaro...</p>
+  </body>
+</html>

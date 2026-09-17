@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
 import { Building2, Users, Menu, X } from "lucide-react";
 import HomeLandingPage from "./pages/HomeLandingPage";
 import BrandLandingPage from "./pages/BrandLandingPage";
@@ -168,7 +168,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="ck26-app-shell" onClickCapture={handleContainerClick}>
         <Header onOpenFounderModal={openFounderModal} />
         <main>
@@ -188,7 +188,7 @@ function App() {
           intent={founderModalIntent}
         />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
